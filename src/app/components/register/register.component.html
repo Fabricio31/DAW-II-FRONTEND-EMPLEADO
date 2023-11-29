@@ -1,4 +1,4 @@
-<h2>Registro de usuario</h2>
+<!-- <h2>Registro de usuario</h2>
 <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label class="form-label">Email</label>
@@ -10,3 +10,23 @@
     </div>
     <input type="submit" value="Enviar">
 </form>
+
+ -->
+ <div class="container">
+    <!-- Página de Registro -->
+    <div id="register-form">
+      <h2 class="text-center mb-4">Registro de Usuario</h2>
+      <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="registerEmail" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="registerEmail" formControlName="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="registerPassword" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="registerPassword" formControlName="password" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Registrarse</button>
+      </form>
+    </div>
+  </div>
+  

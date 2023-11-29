@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -23,7 +24,8 @@ import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-
+import { DividerModule } from 'primeng/divider';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     RegisterComponent
   ],
   imports: [
+    PasswordModule,
+    DividerModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
