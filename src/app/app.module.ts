@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
+
+import { AppRoutingModule } from './app-routing.module';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
@@ -15,15 +18,25 @@ import { TableModule } from 'primeng/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
+import { MainComponent } from './components/main/main.component';
+import { RegisterComponent } from './components/register/register.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    LoginComponent,
+    MainComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ButtonModule,
     InputTextModule,
@@ -33,7 +46,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp({"projectId":"logindaw-dsw","appId":"1:747457406853:web:5e53442cdc595f082986ec","storageBucket":"logindaw-dsw.appspot.com","apiKey":"AIzaSyA9sPRBCATCJtVHs3WFM7EDjdPIdFQRWfw","authDomain":"logindaw-dsw.firebaseapp.com","messagingSenderId":"747457406853"})),
+    provideAuth(() => getAuth())
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
